@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Express Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Express Solutions</h1>
+    <p>Cleaning Services & More Made Easy</p>
+    <p>Professional cleaning, help with projects, painting, and other small jobs.</p>
+    <a href="#booking" class="cta-button">Get a Quote</a>
+  </header>
+
+  <section class="services">
+    <div class="service-card">
+      <h2>Cleaning Services</h2>
+      <p>Residential and commercial cleaning solutions tailored to your needs.</p>
+    </div>
+    <div class="service-card">
+      <h2>Painting</h2>
+      <p>Interior and exterior painting services to give your space a fresh look.</p>
+    </div>
+    <div class="service-card">
+      <h2>Miscellaneous Jobs</h2>
+      <p>Assistance with small repairs, installations, and other tasks.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      We are dedicated to providing reliable and efficient services for your home or business.
+      Our experienced team is here to help with a variety of tasks, ensuring quality results every time.
+    </p>
+  </section>
+
+  <section id="booking" class="booking-form">
+    <h2>Book a Service</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <select required>
+        <option value="" disabled selected>Service Required</option>
+        <option>Cleaning</option>
+        <option>Painting</option>
+        <option>Miscellaneous</option>
+      </select>
+      <textarea placeholder="Describe your request..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</body>
+</html>
