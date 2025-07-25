@@ -5,25 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Express Solutions</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <script src="https://kit.fontawesome.com/0cd86f8564.js" crossorigin="anonymous"></script></head>
+
 <body>
   <header>
-    <h1>Express Solutions</h1>
+    <h1>Express SJ solutions</h1>
     <p>Cleaning Services & More Made Easy</p>
     <p>Professional cleaning, help with projects, painting, and other small jobs.</p>
-    <a href="#booking" class="cta-button">Get a Quote</a>
+    <a href="#booking" class="cta-button">Get a Free Quote</a>
   </header>
 
   <section class="services">
     <div class="service-card">
+      <i class="fa-solid fa-broom-wide"></i>
       <h2>Cleaning Services</h2>
-      <p>Residential and commercial cleaning solutions tailored to your needs.</p>
+      <p>Commercial cleaning solutions tailored to your needs.</p>
     </div>
     <div class="service-card">
+      <i class="fa-solid fa-paint-roller"></i>
       <h2>Painting</h2>
       <p>Interior and exterior painting services to give your space a fresh look.</p>
     </div>
     <div class="service-card">
+      <i class="fa-solid fa-hammer"></i>
       <h2>Miscellaneous Jobs</h2>
       <p>Assistance with small repairs, installations, and other tasks.</p>
     </div>
@@ -39,19 +43,24 @@
 
   <section id="booking" class="booking-form">
     <h2>Book a Service</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <select required>
+    <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+      <!-- Hidden fields for redirect and spam protection -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+
+      <select name="service" required>
         <option value="" disabled selected>Service Required</option>
         <option>Cleaning</option>
         <option>Painting</option>
         <option>Miscellaneous</option>
       </select>
-      <textarea placeholder="Describe your request..." required></textarea>
+      <textarea name="message" placeholder="Describe your request..." required></textarea>
       <button type="submit">Submit</button>
-    </form>
+  </form>
   </section>
 </body>
 </html>
