@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <h1>Express SJ solutions</h1>
+    <h1>ExpressSJsolutions</h1>
     <p>Cleaning Services & More Made Easy</p>
     <p>Professional cleaning, help with projects, painting, and other small jobs.</p>
     <a href="#booking" class="cta-button">Get a Free Quote</a>
@@ -43,24 +43,52 @@
 
   <section id="booking" class="booking-form">
     <h2>Book a Service</h2>
-    <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
-      <!-- Hidden fields for redirect and spam protection -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
 
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
+    <div id="form-container">
+      <form id="booking-form">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
 
-      <select name="service" required>
-        <option value="" disabled selected>Service Required</option>
-        <option>Cleaning</option>
-        <option>Painting</option>
-        <option>Miscellaneous</option>
-      </select>
-      <textarea name="message" placeholder="Describe your request..." required></textarea>
-      <button type="submit">Submit</button>
-  </form>
+        <select name="service" required>
+          <option value="" disabled selected>Service Required</option>
+          <option>Cleaning</option>
+          <option>Painting</option>
+          <option>Miscellaneous</option>
+        </select>
+
+        <textarea name="message" placeholder="Describe your request..." required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="thank-you" style="display: none; text-align: center;">
+      <h3>Thank you!</h3>
+      <p>Your request has been submitted. We'll contact you shortly.</p>
+    </div>
   </section>
+
+  <script>
+  const form = document.getElementById('booking-form');
+  const thankYou = document.getElementById('thank-you');
+  const formContainer = document.getElementById('form-container');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop default form action
+
+    // Optional: Send data via FormSubmit
+    const formData = new FormData(form);
+    fetch("https://formsubmit.co/YOUR_EMAIL@gmail.com", {
+      method: "POST",
+      body: formData,
+    }).then(() => {
+      formContainer.style.display = "none";
+      thankYou.style.display = "block";
+    }).catch(() => {
+      alert("There was an error submitting the form.");
+    });
+  });
+</script>
 </body>
 </html>
