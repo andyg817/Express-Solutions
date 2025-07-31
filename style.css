@@ -5,12 +5,21 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+html{
+  height: 100%;
+}
+
 body {
+  min-height: 100vh;
   background: linear-gradient(to bottom right, #7f00ff, #e100ff);
+  background-attachment: fixed;
+  background-size: cover;
   color: #fff;
+  font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  padding: 2rem;
   scroll-behavior: smooth;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 header {
@@ -19,7 +28,7 @@ header {
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -119,4 +128,18 @@ select::placeholder {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    width: 90%;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+  }
 }
